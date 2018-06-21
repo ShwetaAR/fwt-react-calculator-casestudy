@@ -1,0 +1,19 @@
+button {
+  outline: none;
+  border: 0;
+  padding: 1rem;
+  background-color: var(--black);
+  font-size: 1.25rem;
+  line-height: 1;
+   color: white;
+
+
+}
+
+
+.button-set {
+
+       background-color: #4b5050;
+       color: white;
+}
+  

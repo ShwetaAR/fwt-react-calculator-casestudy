@@ -1,0 +1,97 @@
+	<html>
+	<head>
+		<title>Hello World with jsx</title>
+
+	 <meta charset="utf-8">
+	<script src="./lib/react.js" ></script>
+	<script src="./lib/react-dom.js " ></script>
+	<script src ="./lib/babel.min.js " ></script>
+	<script type="text/babel" >
+		class HelloWorld extends React.Component{
+
+		constructor(){
+			super();
+			this.state={
+				name: "Shweta"
+			};
+		}
+
+		render(){
+			return( 
+				
+					<div>
+	  					
+	   						<RowComponent/>
+	   						<Message message={'hello props message '+this.state.name}
+                             changeName={this.changeName.bind(this)}
+	   						/>
+	   						
+					</div>
+
+		
+			);
+	}
+	   		 changeName(){
+			this.setState({
+			name:'rachana'
+			});
+	}
+
+	   		 changeView(){
+			this.setState({
+			name:'rachana'
+			});
+	}
+
+
+	}
+
+
+		class Message extends React.Component{
+
+			render(){
+				return(
+					<div>
+				 	<h1>{this.props.message}</h1>
+				 	<button onClick={this.props.changeName}>Change Name</button>
+					</div>
+					);
+
+		}
+		
+	}
+
+		class RowComponent extends HelloWorld{
+
+
+		
+		render(){
+			return(
+				<div>
+				<h1>HELLO {this.state.name}</h1>
+				<button onClick={this.changeName.bind(this)}>Change Name</button>
+				</div>
+				
+				);
+		}
+
+	}
+		
+
+
+
+	 function onload() {
+	 	 ReactDOM.render(<HelloWorld/>,document.getElementById("sayHello"));
+
+		
+	 //ReactDOM.render(<h1>hello</h1>,document.getElementById("sayHello"));
+	 }
+
+	</script>
+	</head>
+	<body onload="onload()">
+		<div id="sayHello"></div>
+		
+	   
+	</body>
+	</html>
